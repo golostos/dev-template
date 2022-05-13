@@ -1,0 +1,42 @@
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "name": "John",
+  "surname": "Smith",
+  "birthday": "2022-02-28",
+  "email": "test4@example.com",
+  "password": "test12345"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "test4@example.com",
+  "password": "test12345"
+}
+
+###
+
+PATCH  http://localhost:3000/user/1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNjQzNzQxMzYxLCJleHAiOjE2NDM5MTQxNjF9.9qZ_c4j-pF0wS2noGmXysML_On1TdqeUOnyc9Twm29U
+Cookie: Token=akmO3GLLt7iYGbt9GBdi7.R8f4K%2F0lQTFM%2BIMzzFE3zYvJp7Fpa2Yey61bp%2FOz5j4;
+
+{
+  "name": "John1",
+  "surname": "Smith1",
+  "birthday": "2022-01-28"
+}
+
+### Browser get cookie from server
+
+GET http://localhost:3000/cookie
+
+### Browser send cookie to server
+
+GET http://localhost:3000/read_cookie
+# Cookie: token=djksfksjdfk;
